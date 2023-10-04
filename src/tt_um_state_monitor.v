@@ -21,8 +21,8 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
     assign uo_out[6:0] = (r_state== STATE_TRANSIENT) ? 7'b1111111 : 0;
     assign uo_out[7] = 1'b0;
 
-    // use bidirectionals as outputs
-    assign uio_oe = 8'b00000000;
+    // use bidirectionals as inputs
+    assign uio_oe = 8'b11111111;
 
 
     // external clock is 10kHz, so need 16 bit counter to count to 160.000. (16s delay of transients)
