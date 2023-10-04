@@ -47,7 +47,7 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
         end else begin
             r_input_buffer <= ui_in;
 
-            case (state)
+            case (r_state)
                 STATE_IDLE: begin
                 r_counter <= 10000 * compare;
                 r_state <= (r_input_buffer != ui_in) ? STATE_TRANSIENT : STATE_IDLE;
