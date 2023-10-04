@@ -46,34 +46,34 @@ documentation:
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - compare bit 11
-    - compare bit 12
-    - compare bit 13
-    - compare bit 14
-    - compare bit 15
-    - compare bit 16
-    - compare bit 17
-    - compare bit 18
+    - monitored input 0
+    - monitored input 1
+    - monitored input 2
+    - monitored input 3
+    - input polarity 0
+    - input polarity 1
+    - input polarity 2
+    - input polarity 3
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - monitor state 0
+    - monitor state 1
+    - monitor state 2
+    - monitor state 3
+    - monitor state overview
+    - unused
+    - unused
+    - unused
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
-    - second counter bit 0
-    - second counter bit 1
-    - second counter bit 2
-    - second counter bit 3
-    - second counter bit 4
-    - second counter bit 5
-    - second counter bit 6
-    - second counter bit 7
+    - unused
+    - unused
+    - unused
+    - unused
+    - delay setting 0
+    - delay setting 1
+    - delay setting 2
+    - delay setting 3
 
 # The following fields are optional
   tag:          "timer, test, utility"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,

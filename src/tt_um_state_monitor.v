@@ -57,6 +57,6 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
                     r_state <= (r_counter == 0) ? STATE_IDLE : STATE_TRANSIENT;
                 end
             endcase
-            
+        end 
     end
 endmodule
