@@ -23,7 +23,7 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
     // use bidirectionals as inputs
     assign uio_oe = 8'b11111111;
-
+    assign uio_out = 8'b0;
 
     // external clock is 10kHz, so need 16 bit counter to count to 160.000. (16s delay of transients)
     reg [15:0] r_counter;
