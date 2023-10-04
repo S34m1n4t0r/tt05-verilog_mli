@@ -36,7 +36,22 @@ documentation:
       This can be used as a visual monitor of short state changes of electrical signals.
 
       The design runs on a 10 kHz clock, and allows delay settings of 1s to 16s.
+      ```
+            ______     __________
+      in0         \___/
+           ______________________
+      pol0
+                  ___
+      in1 _______/   \___________
+          
+      pol1 ______________________
 
+          _______            ____
+      out1       \__________/
+
+          _______            ____
+      out2       \__________/
+      ```
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
       After reset, the counter should increase by one every second with a 10MHz input clock.
