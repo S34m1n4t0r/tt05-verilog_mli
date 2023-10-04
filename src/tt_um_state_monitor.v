@@ -18,7 +18,7 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
     wire [3:0] delay_cnt;
 
     
-    assign uo_out[6:0] = led_out;
+    assign uo_out[6:0] = (r_state== STATE_TRANSIENT) ? 7'b1111111 : 0;
     assign uo_out[7] = 1'b0;
 
     // use bidirectionals as outputs
