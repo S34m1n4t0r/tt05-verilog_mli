@@ -29,5 +29,9 @@ async def test_polarity_low(dut):
     assert int(dut.uo_out.value) == 0
 
     await ClockCycles(dut.clk, 2*10000)
-    dut.ui_in.value = 1
+    dut._log.info("signal=0, valid again")
+    dut.ui_in.value = 0
+    await ClockCycles(dut.clk, 2)
+    dut._log.info("Expecting valid output")
+    assert int(dut.uo_out.value) == 1
     await ClockCycles(dut.clk, 2*10000)
