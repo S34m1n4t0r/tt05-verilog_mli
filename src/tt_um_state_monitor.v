@@ -71,7 +71,7 @@ module state_monitor(
 
             case (r_state)
                 STATE_IDLE: begin
-                r_counter <= 10000 * i_compare;
+                r_counter <= 10000 * (i_compare+1'b1);
                 r_state <= (w_invalid_detected) ? STATE_TRANSIENT : STATE_IDLE;
                 end
                 STATE_TRANSIENT: begin
