@@ -58,7 +58,7 @@ module state_monitor(
     wire w_invalid_detected = (i_polarity) ? (r_buf_signal != i_signal) &&  (i_signal == 1'b0) :
                                              (r_buf_signal != i_signal) &&  (i_signal == 1'b1) ;
 
-
+    assign o_valid =~ (r_state == STATE_TRANSIENT);
 
     always @(posedge i_clk) begin
         // if reset, set counter to 0
