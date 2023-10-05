@@ -25,7 +25,7 @@ module tt_um_state_monitor #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
 
     state_monitor state_monitor(
-        .resetn(resetn),
+        .i_reset(reset),
         .i_clk(clk),
         .i_signal(ui_in[0]),
         .i_polarity(ui_in[4]),
