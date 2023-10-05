@@ -55,8 +55,8 @@ module state_monitor(
     reg [1:0] r_state;
 
 
-    wire w_invalid_detected = (i_polarity) ? (r_buf_signal != i_signal) &&  (i_signal == 1'b0) :
-                                             (r_buf_signal != i_signal) &&  (i_signal == 1'b1) ;
+    wire w_invalid_detected = (i_polarity) ? (i_signal == 1'b0) :
+                                             (i_signal == 1'b1) ;
 
     assign o_valid =~ (r_state == STATE_TRANSIENT);
 
@@ -75,7 +75,7 @@ module state_monitor(
                 r_state <= (w_invalid_detected) ? STATE_TRANSIENT : STATE_IDLE;
                 end
                 STATE_TRANSIENT: begin
-                    r_counter <= r_counter - 1;
+                    r_counter <= (r_counter!=0) ? r_counter - 1 : r_counter;
                     r_state <= (r_counter == 0)&&(~w_invalid_detected) ? STATE_IDLE : STATE_TRANSIENT;
                 end
             endcase
