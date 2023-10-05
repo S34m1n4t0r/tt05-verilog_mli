@@ -40,7 +40,7 @@ module state_monitor(
     input wire i_reset,  //active high
     input wire i_clk,
     input wire i_signal,
-    input wire i_polarity,
+    input wire i_polarity,  //(active high: 0=i_signal valid when 0, 1=i_signal valid when 1)
     output wire o_valid,
     input wire [3:0] i_compare
 );
