@@ -16,7 +16,7 @@ async def test_polarity_low(dut):
     
 
     dut._log.info("signal=0, polarity=0")
-    dut.ui_in = 0
+    dut.ui_in.value = 0
 
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
